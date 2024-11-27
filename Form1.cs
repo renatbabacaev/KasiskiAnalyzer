@@ -14,11 +14,6 @@ namespace KasiskiAnalyzer
             buttonReset.Click += buttonReset_Click;
         }
 
-        private void ButtonFindSequences_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         public class TextHandler
         {
             public Char[] cryptedText;
