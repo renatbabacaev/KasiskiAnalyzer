@@ -106,7 +106,7 @@
             textKey.Name = "textKey";
             textKey.PlaceholderText = "Enter Key...";
             textKey.Size = new Size(110, 23);
-            textKey.TabIndex = 6;
+            textKey.TabIndex = 1;
             // 
             // textEnterKey
             // 
