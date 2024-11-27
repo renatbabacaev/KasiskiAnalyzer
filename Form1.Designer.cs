@@ -35,7 +35,7 @@
             buttonReset = new Button();
             buttonFindSequences = new Button();
             textKey = new TextBox();
-            textEnterKey = new Label();
+            labelEnterKey = new Label();
             SuspendLayout();
             // 
             // textCryptedText
@@ -108,21 +108,21 @@
             textKey.Size = new Size(110, 23);
             textKey.TabIndex = 1;
             // 
-            // textEnterKey
+            // labelEnterKey
             // 
-            textEnterKey.AutoSize = true;
-            textEnterKey.Location = new Point(514, 10);
-            textEnterKey.Name = "textEnterKey";
-            textEnterKey.Size = new Size(56, 15);
-            textEnterKey.TabIndex = 7;
-            textEnterKey.Text = "Enter Key";
+            labelEnterKey.AutoSize = true;
+            labelEnterKey.Location = new Point(514, 10);
+            labelEnterKey.Name = "labelEnterKey";
+            labelEnterKey.Size = new Size(56, 15);
+            labelEnterKey.TabIndex = 7;
+            labelEnterKey.Text = "Enter Key";
             // 
             // KasiskiAnalyzer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1004, 272);
-            Controls.Add(textEnterKey);
+            Controls.Add(labelEnterKey);
             Controls.Add(textKey);
             Controls.Add(buttonFindSequences);
             Controls.Add(buttonReset);
@@ -147,7 +147,7 @@
         private TextBox textKey;
         private Label labelEnterCryptedText;
         private Label labelProcessedText;
-        private Label textEnterKey;
+        private Label labelEnterKey;
         private Button buttonReset;
         private Button buttonFindSequences;
 
