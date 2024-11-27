@@ -10,7 +10,7 @@ namespace KasiskiAnalyzer
         {
             InitializeComponent();
             textCryptedText.TextChanged += textProcessedText_Update;
-            textKey.TextChanged += updateDecodedTextWithKey;
+            textKey.TextChanged += textDecodedText_Update;
         }
 
         private void ButtonFindSequences_Click(object? sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace KasiskiAnalyzer
             textCryptedText.Text = s;
             textProcessedText.Text = s;
         }
-        private void updateDecodedTextWithKey(object sender, EventArgs e)
+        private void textDecodedText_Update(object sender, EventArgs e)
         {
             textHandler.SetKey(textKey.Text);
             String s = new string(textHandler.DecodeCrypted());
