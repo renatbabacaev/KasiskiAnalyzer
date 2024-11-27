@@ -9,7 +9,7 @@ namespace KasiskiAnalyzer
         public KasiskiAnalyzer()
         {
             InitializeComponent();
-            buttonFindSequences.Click += buttonFindSequences_Click;
+            textCryptedText.TextChanged += textProcessedText_Update;
             textKey.TextChanged += updateDecodedTextWithKey;
         }
 
@@ -24,7 +24,7 @@ namespace KasiskiAnalyzer
             public Char[] decodedText;
             public Char[] key;
 
-            public Char[] ProcessString(String s)
+            private Char[] ProcessString(String s)
             {
                 StringBuilder sb = new StringBuilder();
 
@@ -43,8 +43,6 @@ namespace KasiskiAnalyzer
                 String s = new String(ProcessString(text.ToLower()));
                 cryptedText = s.ToCharArray();
             }
-
-
 
             public void SetDecodedText()
             {
@@ -65,21 +63,13 @@ namespace KasiskiAnalyzer
                 }
 
                 StringBuilder sb = new StringBuilder();
-                Char tempChar;
 
                 for (int i = 0; i < cryptedText.Length; i++)
                 {
-                    tempChar = (Char)(cryptedText[i] + key[i % key.Length]);
-                    if (tempChar >= 'a' && tempChar <= 'z')
-                    {
-                        sb.Append(
-                            (Char)('a' + ((tempChar - 'a' + 1) % 26))
-                            );
-                    }
-                    else
-                    {
-                        sb.Append(tempChar);
-                    }
+                    sb.Append(
+                        // ChatGPT Assisted expression notation
+                        (Char)( (((cryptedText[i] - 'a') - ((key[i % key.Length] - 'a') % 26) + 26) % 26) + 'a')
+                    );
                 }
 
 
@@ -87,7 +77,7 @@ namespace KasiskiAnalyzer
             }
         }
 
-        private void buttonFindSequences_Click(object sender, EventArgs e)
+        private void textProcessedText_Update(object sender, EventArgs e)
         {
             textHandler.SetCryptedText(textCryptedText.Text);
             String s = new String(textHandler.cryptedText);
