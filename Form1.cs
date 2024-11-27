@@ -73,7 +73,7 @@ namespace KasiskiAnalyzer
                     if (tempChar >= 'a' && tempChar <= 'z')
                     {
                         sb.Append(
-                            (Char)(key[i % key.Length] + ((tempChar - key[i % key.Length] + 1) % 26))
+                            (Char)('a' + ((tempChar - 'a' + 1) % 26))
                             );
                     }
                     else
