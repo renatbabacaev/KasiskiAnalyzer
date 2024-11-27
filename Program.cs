@@ -1,19 +1,8 @@
+using System.Security.Cryptography.X509Certificates;
+using System.Transactions;
+
 namespace KasiskiAnalyzer
 {
-    public class CryptedTextHandler
-    {
-        public String cryptedText;
-        public String decodedText;
-        public List<Char> key;
-
-        public CryptedTextHandler(String text)
-        {
-            cryptedText = text;
-        }
-
-
-    }
-
     internal static class Program
     {
         /// <summary>
