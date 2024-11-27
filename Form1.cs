@@ -9,7 +9,7 @@ namespace KasiskiAnalyzer
         public KasiskiAnalyzer()
         {
             InitializeComponent();
-            textCryptedText.TextChanged += textProcessedText_Update;
+            textCryptedText.TextChanged += textCryptedText_Update;
             textKey.TextChanged += textDecodedText_Update;
             buttonReset.Click += buttonReset_Click;
         }
@@ -87,7 +87,7 @@ namespace KasiskiAnalyzer
             }
         }
 
-        private void textProcessedText_Update(object sender, EventArgs e)
+        private void textCryptedText_Update(object sender, EventArgs e)
         {
             textHandler.SetCryptedText(textCryptedText.Text);
             String s = new String(textHandler.cryptedText);
