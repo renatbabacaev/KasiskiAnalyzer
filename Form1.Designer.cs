@@ -40,83 +40,88 @@
             // 
             // textCryptedText
             // 
-            textCryptedText.Location = new Point(12, 41);
+            textCryptedText.Location = new Point(10, 31);
+            textCryptedText.Margin = new Padding(3, 2, 3, 2);
             textCryptedText.Multiline = true;
             textCryptedText.Name = "textCryptedText";
             textCryptedText.PlaceholderText = "Enter crypted text...";
             textCryptedText.ScrollBars = ScrollBars.Vertical;
-            textCryptedText.Size = new Size(332, 131);
+            textCryptedText.Size = new Size(291, 99);
             textCryptedText.TabIndex = 0;
             // 
             // labelEnterCryptedText
             // 
             labelEnterCryptedText.AutoSize = true;
-            labelEnterCryptedText.Location = new Point(12, 9);
+            labelEnterCryptedText.Location = new Point(10, 7);
             labelEnterCryptedText.Name = "labelEnterCryptedText";
-            labelEnterCryptedText.Size = new Size(130, 20);
+            labelEnterCryptedText.Size = new Size(103, 15);
             labelEnterCryptedText.TabIndex = 1;
             labelEnterCryptedText.Text = "Enter Crypted Text";
             // 
             // labelProcessedText
             // 
             labelProcessedText.AutoSize = true;
-            labelProcessedText.Location = new Point(12, 186);
+            labelProcessedText.Location = new Point(10, 140);
             labelProcessedText.Name = "labelProcessedText";
-            labelProcessedText.Size = new Size(106, 20);
+            labelProcessedText.Size = new Size(84, 15);
             labelProcessedText.TabIndex = 2;
             labelProcessedText.Text = "Processed Text";
             // 
             // textProcessedText
             // 
-            textProcessedText.Location = new Point(12, 212);
+            textProcessedText.Location = new Point(10, 159);
+            textProcessedText.Margin = new Padding(3, 2, 3, 2);
             textProcessedText.Multiline = true;
             textProcessedText.Name = "textProcessedText";
             textProcessedText.PlaceholderText = "The result will be shown here...";
             textProcessedText.ReadOnly = true;
             textProcessedText.ScrollBars = ScrollBars.Vertical;
-            textProcessedText.Size = new Size(332, 127);
+            textProcessedText.Size = new Size(291, 96);
             textProcessedText.TabIndex = 3;
             // 
             // buttonReset
             // 
-            buttonReset.Location = new Point(364, 41);
+            buttonReset.Location = new Point(318, 31);
+            buttonReset.Margin = new Padding(3, 2, 3, 2);
             buttonReset.Name = "buttonReset";
-            buttonReset.Size = new Size(153, 35);
+            buttonReset.Size = new Size(134, 26);
             buttonReset.TabIndex = 4;
             buttonReset.Text = "Reset";
             buttonReset.UseVisualStyleBackColor = true;
             // 
             // buttonFindSequences
             // 
-            buttonFindSequences.Location = new Point(364, 212);
+            buttonFindSequences.Location = new Point(318, 159);
+            buttonFindSequences.Margin = new Padding(3, 2, 3, 2);
             buttonFindSequences.Name = "buttonFindSequences";
-            buttonFindSequences.Size = new Size(153, 128);
+            buttonFindSequences.Size = new Size(134, 96);
             buttonFindSequences.TabIndex = 5;
             buttonFindSequences.Text = "Find Sequences";
             buttonFindSequences.UseVisualStyleBackColor = true;
             // 
             // textKey
             // 
-            textKey.Location = new Point(584, 46);
+            textKey.Location = new Point(511, 34);
+            textKey.Margin = new Padding(3, 2, 3, 2);
             textKey.Name = "textKey";
             textKey.PlaceholderText = "Enter Key...";
-            textKey.Size = new Size(125, 27);
+            textKey.Size = new Size(110, 23);
             textKey.TabIndex = 6;
             // 
             // textEnterKey
             // 
             textEnterKey.AutoSize = true;
-            textEnterKey.Location = new Point(587, 14);
+            textEnterKey.Location = new Point(514, 10);
             textEnterKey.Name = "textEnterKey";
-            textEnterKey.Size = new Size(71, 20);
+            textEnterKey.Size = new Size(56, 15);
             textEnterKey.TabIndex = 7;
             textEnterKey.Text = "Enter Key";
             // 
             // KasiskiAnalyzer
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1148, 362);
+            ClientSize = new Size(1004, 272);
             Controls.Add(textEnterKey);
             Controls.Add(textKey);
             Controls.Add(buttonFindSequences);
@@ -125,6 +130,10 @@
             Controls.Add(labelProcessedText);
             Controls.Add(labelEnterCryptedText);
             Controls.Add(textCryptedText);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 2, 3, 2);
+            MinimumSize = new Size(1024, 315);
             Name = "KasiskiAnalyzer";
             Text = "Kasiski Analyzer";
             ResumeLayout(false);

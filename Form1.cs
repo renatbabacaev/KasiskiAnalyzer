@@ -24,6 +24,15 @@ namespace KasiskiAnalyzer
             public Char[] decodedText;
             public Char[] key;
 
+
+            public TextHandler()
+            {
+                cryptedText = new Char[0];
+                decodedText = new Char[0];
+                key = new Char[0];
+            }
+
+
             private Char[] ProcessString(String s)
             {
                 StringBuilder sb = new StringBuilder();
