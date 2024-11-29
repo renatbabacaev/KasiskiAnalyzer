@@ -64,7 +64,7 @@
             textProcessedText.PlaceholderText = "The result will be shown here...";
             textProcessedText.ReadOnly = true;
             textProcessedText.ScrollBars = ScrollBars.Vertical;
-            textProcessedText.Size = new Size(431, 492);
+            textProcessedText.Size = new Size(431, 495);
             textProcessedText.TabIndex = 3;
             // 
             // buttonReset
@@ -93,7 +93,7 @@
             textKey.Margin = new Padding(3, 2, 3, 2);
             textKey.Name = "textKey";
             textKey.PlaceholderText = "Enter Key...";
-            textKey.Size = new Size(429, 27);
+            textKey.Size = new Size(429, 23);
             textKey.TabIndex = 1;
             // 
             // groupProcessed
@@ -120,6 +120,7 @@
             // 
             // splitContainer1
             // 
+            splitContainer1.IsSplitterFixed = true;
             splitContainer1.Location = new Point(12, 12);
             splitContainer1.Name = "splitContainer1";
             // 
@@ -134,11 +135,12 @@
             splitContainer1.Size = new Size(900, 615);
             splitContainer1.SplitterDistance = 446;
             splitContainer1.TabIndex = 10;
+            splitContainer1.TabStop = false;
             // 
             // KasiskiAnalyzer
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(924, 634);
             Controls.Add(splitContainer1);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);

@@ -1,6 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-using System.Transactions;
-
 namespace KasiskiAnalyzer
 {
     internal static class Program
@@ -11,6 +8,8 @@ namespace KasiskiAnalyzer
         [STAThread]
         static void Main()
         {
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
