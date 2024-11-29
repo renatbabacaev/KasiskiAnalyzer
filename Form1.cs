@@ -9,9 +9,34 @@ namespace KasiskiAnalyzer
         public KasiskiAnalyzer()
         {
             InitializeComponent();
+            /*
             textCryptedText.TextChanged += textCryptedText_Update;
             textKey.TextChanged += textDecodedText_Update;
             buttonReset.Click += buttonReset_Click;
+            */
+
+            textCryptedText.TextChanged += (object sender, EventArgs e) =>
+            {
+                textHandler.SetCryptedText(textCryptedText.Text);
+                String s = new String(textHandler.cryptedText);
+                textCryptedText.Text = s;
+                textProcessedText.Text = s;
+            };
+            
+            textKey.TextChanged += (object sender, EventArgs e) =>
+            {
+                textHandler.SetKey(textKey.Text);
+                String s = new string(textHandler.DecodeCrypted());
+                textProcessedText.Text = s;
+            };
+
+            buttonReset.Click += (object sender, EventArgs e) =>
+            {
+                textHandler.SetCryptedText("");
+                textCryptedText.Text = "";
+                textProcessedText.Text = "";
+                textKey.Text = "";
+            };
         }
 
         public class TextHandler
@@ -80,27 +105,6 @@ namespace KasiskiAnalyzer
 
                 return sb.ToString().ToCharArray();
             }
-        }
-
-        private void textCryptedText_Update(object sender, EventArgs e)
-        {
-            textHandler.SetCryptedText(textCryptedText.Text);
-            String s = new String(textHandler.cryptedText);
-            textCryptedText.Text = s;
-            textProcessedText.Text = s;
-        }
-        private void textDecodedText_Update(object sender, EventArgs e)
-        {
-            textHandler.SetKey(textKey.Text);
-            String s = new string(textHandler.DecodeCrypted());
-            textProcessedText.Text = s;
-        }
-        private void buttonReset_Click(object sender, EventArgs e)
-        {
-            textHandler.SetCryptedText("");
-            textCryptedText.Text = "";
-            textProcessedText.Text = "";
-            textKey.Text = "";
         }
     }
 }
