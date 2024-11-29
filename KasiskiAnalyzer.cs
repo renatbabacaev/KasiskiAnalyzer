@@ -9,16 +9,16 @@ namespace KasiskiAnalyzer
             buttonFindSequences.Click += (object sender, EventArgs e) =>
             {
                 textHandler.SetCryptedText(textCryptedText.Text);
-                String s = new String(textHandler.cryptedText);
-                textCryptedText.Text = s;
-                textProcessedText.Text = s;
-            };
-
-            textKey.TextChanged += (object sender, EventArgs e) =>
-            {
                 textHandler.SetKey(textKey.Text);
-                String s = new string(textHandler.DecodeCrypted());
-                textProcessedText.Text = s;
+
+                String crypt = new String(textHandler.cryptedText);
+                String key = new String(textHandler.key);
+                String processed = new String(textHandler.DecodeCrypted());
+
+                textCryptedText.Text = crypt;
+                textKey.Text = key;
+
+                textProcessedText.Text = processed;
             };
 
             buttonReset.Click += (object sender, EventArgs e) =>
