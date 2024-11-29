@@ -121,7 +121,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1004, 272);
+            ClientSize = new Size(628, 264);
             Controls.Add(labelEnterKey);
             Controls.Add(textKey);
             Controls.Add(buttonFindSequences);
@@ -133,7 +133,8 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(3, 2, 3, 2);
-            MinimumSize = new Size(1024, 315);
+            MaximumSize = new Size(650, 315);
+            MinimumSize = new Size(650, 315);
             Name = "KasiskiAnalyzer";
             Text = "Kasiski Analyzer";
             ResumeLayout(false);
