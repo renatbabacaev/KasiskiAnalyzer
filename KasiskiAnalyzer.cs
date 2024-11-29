@@ -9,11 +9,6 @@ namespace KasiskiAnalyzer
         public KasiskiAnalyzer()
         {
             InitializeComponent();
-            /*
-            textCryptedText.TextChanged += textCryptedText_Update;
-            textKey.TextChanged += textDecodedText_Update;
-            buttonReset.Click += buttonReset_Click;
-            */
 
             textCryptedText.TextChanged += (object sender, EventArgs e) =>
             {
