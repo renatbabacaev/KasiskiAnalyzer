@@ -46,7 +46,7 @@
             textCryptedText.Name = "textCryptedText";
             textCryptedText.PlaceholderText = "Enter crypted text...";
             textCryptedText.ScrollBars = ScrollBars.Vertical;
-            textCryptedText.Size = new Size(291, 99);
+            textCryptedText.Size = new Size(291, 107);
             textCryptedText.TabIndex = 0;
             // 
             // labelEnterCryptedText
@@ -54,7 +54,7 @@
             labelEnterCryptedText.AutoSize = true;
             labelEnterCryptedText.Location = new Point(10, 7);
             labelEnterCryptedText.Name = "labelEnterCryptedText";
-            labelEnterCryptedText.Size = new Size(103, 15);
+            labelEnterCryptedText.Size = new Size(130, 20);
             labelEnterCryptedText.TabIndex = 1;
             labelEnterCryptedText.Text = "Enter Crypted Text";
             // 
@@ -63,20 +63,20 @@
             labelProcessedText.AutoSize = true;
             labelProcessedText.Location = new Point(10, 140);
             labelProcessedText.Name = "labelProcessedText";
-            labelProcessedText.Size = new Size(84, 15);
+            labelProcessedText.Size = new Size(106, 20);
             labelProcessedText.TabIndex = 2;
             labelProcessedText.Text = "Processed Text";
             // 
             // textProcessedText
             // 
-            textProcessedText.Location = new Point(10, 159);
+            textProcessedText.Location = new Point(10, 162);
             textProcessedText.Margin = new Padding(3, 2, 3, 2);
             textProcessedText.Multiline = true;
             textProcessedText.Name = "textProcessedText";
             textProcessedText.PlaceholderText = "The result will be shown here...";
             textProcessedText.ReadOnly = true;
             textProcessedText.ScrollBars = ScrollBars.Vertical;
-            textProcessedText.Size = new Size(291, 96);
+            textProcessedText.Size = new Size(291, 93);
             textProcessedText.TabIndex = 3;
             // 
             // buttonReset
@@ -105,7 +105,7 @@
             textKey.Margin = new Padding(3, 2, 3, 2);
             textKey.Name = "textKey";
             textKey.PlaceholderText = "Enter Key...";
-            textKey.Size = new Size(110, 23);
+            textKey.Size = new Size(110, 27);
             textKey.TabIndex = 1;
             // 
             // labelEnterKey
@@ -113,13 +113,13 @@
             labelEnterKey.AutoSize = true;
             labelEnterKey.Location = new Point(514, 10);
             labelEnterKey.Name = "labelEnterKey";
-            labelEnterKey.Size = new Size(56, 15);
+            labelEnterKey.Size = new Size(71, 20);
             labelEnterKey.TabIndex = 7;
             labelEnterKey.Text = "Enter Key";
             // 
             // KasiskiAnalyzer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1004, 272);
             Controls.Add(labelEnterKey);
