@@ -162,13 +162,13 @@
 
         #endregion
 
-        private TextBox textCryptedText;
-        private TextBox textProcessedText;
-        private TextBox textKey;
+        public static TextBox textCryptedText;
+        public static TextBox textProcessedText;
+        public TextBox textKey;
         private Button buttonReset;
         private Button buttonFindSequences;
 
-        private TextHandler textHandler = new TextHandler();
+        public static TextHandler textHandler = new TextHandler();
         private GroupBox groupProcessed;
         private GroupBox groupCrypted;
         private SplitContainer splitContainer1;
