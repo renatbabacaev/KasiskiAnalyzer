@@ -1,4 +1,6 @@
-﻿namespace KasiskiAnalyzer
+﻿using System.Text;
+
+namespace KasiskiAnalyzer
 {
     partial class MainAnalyzer
     {
@@ -28,31 +30,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            keyInput = new TextBox();
             groupBox1 = new GroupBox();
-            numericUpDown1 = new NumericUpDown();
+            keyLength = new NumericUpDown();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
-            numericUpDown2 = new NumericUpDown();
+            selectLetter = new NumericUpDown();
             groupBox4 = new GroupBox();
-            numericUpDown3 = new NumericUpDown();
-            label1 = new Label();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            shiftLetter = new NumericUpDown();
+            keyChar = new Label();
+            buttonReset = new Button();
+            buttonCopy = new Button();
+            ((System.ComponentModel.ISupportInitialize)keyLength).BeginInit();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)selectLetter).BeginInit();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)shiftLetter).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // keyInput
             // 
-            textBox1.Location = new Point(13, 70);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Enter Key...";
-            textBox1.Size = new Size(227, 23);
-            textBox1.TabIndex = 0;
+            keyInput.Location = new Point(13, 70);
+            keyInput.Name = "keyInput";
+            keyInput.PlaceholderText = "Enter Key...";
+            keyInput.Size = new Size(227, 23);
+            keyInput.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -63,16 +66,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Analysis Results";
             // 
-            // numericUpDown1
+            // keyLength
             // 
-            numericUpDown1.Location = new Point(6, 22);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(69, 23);
-            numericUpDown1.TabIndex = 2;
+            keyLength.Location = new Point(6, 22);
+            keyLength.Name = "keyLength";
+            keyLength.Size = new Size(69, 23);
+            keyLength.TabIndex = 2;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(numericUpDown1);
+            groupBox2.Controls.Add(keyLength);
             groupBox2.Location = new Point(12, 12);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(81, 52);
@@ -82,7 +85,7 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(numericUpDown2);
+            groupBox3.Controls.Add(selectLetter);
             groupBox3.Location = new Point(99, 12);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(87, 52);
@@ -90,17 +93,17 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Select Letter";
             // 
-            // numericUpDown2
+            // selectLetter
             // 
-            numericUpDown2.Location = new Point(6, 22);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(75, 23);
-            numericUpDown2.TabIndex = 0;
-            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            selectLetter.Location = new Point(6, 22);
+            selectLetter.Name = "selectLetter";
+            selectLetter.Size = new Size(75, 23);
+            selectLetter.TabIndex = 0;
+            selectLetter.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(numericUpDown3);
+            groupBox4.Controls.Add(shiftLetter);
             groupBox4.Location = new Point(192, 13);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(82, 51);
@@ -108,68 +111,84 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Letter Shift";
             // 
-            // numericUpDown3
+            // shiftLetter
             // 
-            numericUpDown3.Location = new Point(6, 21);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(70, 23);
-            numericUpDown3.TabIndex = 0;
+            shiftLetter.Location = new Point(6, 21);
+            shiftLetter.Name = "shiftLetter";
+            shiftLetter.Size = new Size(70, 23);
+            shiftLetter.TabIndex = 0;
             // 
-            // label1
+            // keyChar
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.Location = new Point(280, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(25, 25);
-            label1.TabIndex = 6;
-            label1.Text = "A";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            keyChar.AutoSize = true;
+            keyChar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            keyChar.Location = new Point(280, 28);
+            keyChar.Name = "keyChar";
+            keyChar.Size = new Size(25, 25);
+            keyChar.TabIndex = 6;
+            keyChar.Text = "A";
+            keyChar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // buttonReset
             // 
-            button1.Location = new Point(246, 70);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 23);
-            button1.TabIndex = 7;
-            button1.Text = "Reset";
-            button1.UseVisualStyleBackColor = true;
+            buttonReset.Location = new Point(246, 70);
+            buttonReset.Name = "buttonReset";
+            buttonReset.Size = new Size(59, 23);
+            buttonReset.TabIndex = 7;
+            buttonReset.Text = "Reset";
+            buttonReset.UseVisualStyleBackColor = true;
+            // 
+            // buttonCopy
+            // 
+            buttonCopy.AutoSize = true;
+            buttonCopy.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonCopy.Location = new Point(311, 32);
+            buttonCopy.Name = "buttonCopy";
+            buttonCopy.Size = new Size(91, 25);
+            buttonCopy.TabIndex = 9;
+            buttonCopy.Text = "Copy This Key";
+            buttonCopy.TextAlign = ContentAlignment.MiddleLeft;
+            buttonCopy.UseVisualStyleBackColor = true;
             // 
             // MainAnalyzer
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1050, 658);
-            Controls.Add(button1);
-            Controls.Add(label1);
+            Controls.Add(buttonCopy);
+            Controls.Add(buttonReset);
+            Controls.Add(keyChar);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(textBox1);
+            Controls.Add(keyInput);
             Name = "MainAnalyzer";
             Text = "Analysis Results";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)keyLength).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)selectLetter).EndInit();
             groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)shiftLetter).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox keyInput;
         private GroupBox groupBox1;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown keyLength;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown selectLetter;
         private GroupBox groupBox4;
-        private NumericUpDown numericUpDown3;
-        private Label label1;
-        private Button button1;
+        private NumericUpDown shiftLetter;
+        private Label keyChar;
+        private Button buttonReset;
+
+        private StringBuilder key = new StringBuilder("Aa");
+        private Button buttonCopy;
     }
 }
