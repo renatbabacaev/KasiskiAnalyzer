@@ -1,6 +1,6 @@
 ﻿namespace KasiskiAnalyzer
 {
-    partial class KasiskiAnalyzer
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
