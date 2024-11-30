@@ -6,7 +6,7 @@ namespace KasiskiAnalyzer
         {
             InitializeComponent();
 
-            buttonFindSequences.Click += (object sender, EventArgs e) =>
+            buttonFindSequences.Click += (object? sender, EventArgs e) =>
             {
                 textHandler.SetCryptedText(textCryptedText.Text);
                 textHandler.SetKey(textKey.Text);
@@ -21,7 +21,7 @@ namespace KasiskiAnalyzer
                 textProcessedText.Text = processed;
             };
 
-            textCryptedText.TextChanged += (object sender, EventArgs e) =>
+            textCryptedText.TextChanged += (object? sender, EventArgs e) =>
             {
                 textHandler.SetCryptedText(textCryptedText.Text);
                 textHandler.SetKey(textKey.Text);
@@ -33,7 +33,7 @@ namespace KasiskiAnalyzer
                 textProcessedText.Text = processed;
             };
 
-            textKey.TextChanged += (object sender, EventArgs e) =>
+            textKey.TextChanged += (object? sender, EventArgs e) =>
             {
                 textHandler.SetCryptedText(textCryptedText.Text);
                 textHandler.SetKey(textKey.Text);
@@ -45,7 +45,7 @@ namespace KasiskiAnalyzer
                 textProcessedText.Text = processed;
             };
 
-            buttonReset.Click += (object sender, EventArgs e) =>
+            buttonReset.Click += (object? sender, EventArgs e) =>
             {
                 textHandler.SetCryptedText("");
                 textCryptedText.Text = "";
