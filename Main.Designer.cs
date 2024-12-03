@@ -164,7 +164,7 @@
 
         public static TextBox textCryptedText;
         public static TextBox textProcessedText;
-        public TextBox textKey;
+        public static TextBox textKey;
         private Button buttonReset;
         private Button buttonFindSequences;
 
@@ -173,6 +173,6 @@
         private SplitContainer splitContainer1;
 
         public static TextHandler textHandler = new TextHandler();
-        private MainAnalyzer analyzer;
+        public static MainAnalyzer analyzer;
     }
 }

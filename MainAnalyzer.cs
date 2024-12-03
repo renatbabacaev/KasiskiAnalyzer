@@ -19,7 +19,8 @@ namespace KasiskiAnalyzer
 
             keyLength.Value = 2;
             selectLetter.Value = 1;
-            buttonCopy.Text = key.ToString();
+            buttonCopy.Text = new string(Main.textHandler.key);
+            keyInput.Text = new string(Main.textHandler.key);
 
             keyLength.ValueChanged += (object? sender, EventArgs e) =>
             {
@@ -103,6 +104,11 @@ namespace KasiskiAnalyzer
 
                 // KasiskiAnalyzer.Main.textCryptedText.Text = new String(KasiskiAnalyzer.Main.textHandler.cryptedText);
                 // KasiskiAnalyzer.Main.textProcessedText.Text = new String(KasiskiAnalyzer.Main.textHandler.decodedText);
+            };
+
+            keyInput.TextChanged += (object? sender, EventArgs e) =>
+            {
+                KasiskiAnalyzer.Main.processed_Update(keyInput, EventArgs.Empty);
             };
         }
     }

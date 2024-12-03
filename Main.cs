@@ -2,23 +2,33 @@ namespace KasiskiAnalyzer
 {
     public partial class Main : Form
     {
+        public static void processed_Update(object? sender, EventArgs e)
+        {
+            textHandler.SetCryptedText(textCryptedText.Text);
+
+            if (analyzer != null)
+            {
+                textHandler.SetKey(KasiskiAnalyzer.MainAnalyzer.keyInput.Text);
+            }
+
+            String key = new String(textHandler.key);
+            String processed = new String(textHandler.DecodeCrypted());
+
+            textKey.Text = key;
+            textProcessedText.Text = processed;
+        }
+
         public Main()
         {
             InitializeComponent();
 
             buttonFindSequences.Click += (object? sender, EventArgs e) =>
             {
-                textHandler.SetCryptedText(textCryptedText.Text);
-                textHandler.SetKey(textKey.Text);
-
                 String crypt = new String(textHandler.cryptedText);
-                String key = new String(textHandler.key);
-                String processed = new String(textHandler.DecodeCrypted());
+
+                processed_Update(buttonFindSequences, EventArgs.Empty);
 
                 textCryptedText.Text = crypt;
-                textKey.Text = key;
-
-                textProcessedText.Text = processed;
 
                 if (analyzer == null || analyzer.IsDisposed)
                 {
@@ -35,29 +45,9 @@ namespace KasiskiAnalyzer
                 }
             };
 
-            textCryptedText.TextChanged += (object? sender, EventArgs e) =>
-            {
-                textHandler.SetCryptedText(textCryptedText.Text);
-                textHandler.SetKey(textKey.Text);
+            textCryptedText.TextChanged += processed_Update;
 
-                String key = new String(textHandler.key);
-                String processed = new String(textHandler.DecodeCrypted());
-
-                textKey.Text = key;
-                textProcessedText.Text = processed;
-            };
-
-            textKey.TextChanged += (object? sender, EventArgs e) =>
-            {
-                textHandler.SetCryptedText(textCryptedText.Text);
-                textHandler.SetKey(textKey.Text);
-
-                String key = new String(textHandler.key);
-                String processed = new String(textHandler.DecodeCrypted());
-
-                textKey.Text = key;
-                textProcessedText.Text = processed;
-            };
+            textKey.TextChanged += processed_Update;
 
             buttonReset.Click += (object? sender, EventArgs e) =>
             {

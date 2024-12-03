@@ -815,7 +815,7 @@ namespace KasiskiAnalyzer
 
         #endregion
 
-        private TextBox keyInput;
+        public static TextBox keyInput;
         private GroupBox groupBox1;
         private NumericUpDown keyLength;
         private GroupBox groupBox2;
