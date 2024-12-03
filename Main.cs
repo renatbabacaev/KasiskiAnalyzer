@@ -19,6 +19,20 @@ namespace KasiskiAnalyzer
                 textKey.Text = key;
 
                 textProcessedText.Text = processed;
+
+                if (analyzer == null || analyzer.IsDisposed)
+                {
+                    analyzer = new MainAnalyzer();
+                    analyzer.FormClosed += (object? sender, FormClosedEventArgs e) =>
+                    {
+                        analyzer = null;
+                    };
+                    analyzer.Show();
+                }
+                else
+                {
+                    analyzer.BringToFront();
+                }
             };
 
             textCryptedText.TextChanged += (object? sender, EventArgs e) =>

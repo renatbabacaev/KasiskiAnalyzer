@@ -168,9 +168,11 @@
         private Button buttonReset;
         private Button buttonFindSequences;
 
-        public static TextHandler textHandler = new TextHandler();
         private GroupBox groupProcessed;
         private GroupBox groupCrypted;
         private SplitContainer splitContainer1;
+
+        public static TextHandler textHandler = new TextHandler();
+        private MainAnalyzer analyzer;
     }
 }
